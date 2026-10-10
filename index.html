@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEBENS DIAMONDS</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      background: #111a35;
+      padding: 25px 12px;
+      border-bottom: 2px solid #24c8ff;
+    }
+
+    h1 {
+      color: #36c5ff;
+      font-size: 28px;
+    }
+
+    .intro {
+      padding: 20px 12px;
+    }
+
+    .box {
+      background: #182342;
+      margin: 15px;
+      padding: 22px;
+      border-radius: 15px;
+      border: 1px solid #36c5ff;
+    }
+
+    .pack {
+      background: #101a33;
+      margin: 12px 0;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    button {
+      background: #19b9e8;
+      color: #07111f;
+      border: none;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #36c5ff;
+      font-size: 16px;
+    }
+
+    footer {
+      padding: 20px;
+      color: #b9c6df;
+    }
+
+    .note {
+      color: #ffd86b;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>💎 WEBENS DIAMONDS 💎</h1>
+    <p>Votre boutique de diamants Free Fire</p>
+  </header>
+
+  <section class="intro">
+    <h2>Bienvenue chez WEBENS DIAMONDS</h2>
+    <p>Choisissez votre pack de diamants !</p>
+  </section>
+
+  <div class="box">
+    <h2>💎 Nos packs</h2>
+
+    <div class="pack">
+      <h3>100 diamants</h3>
+      <button onclick="choisir('100 diamants')">
+        Choisir ce pack
+      </button>
+    </div>
+
+    <div class="pack">
+      <h3>310 diamants</h3>
+      <button onclick="choisir('310 diamants')">
+        Choisir ce pack
+      </button>
+    </div>
+
+    <div class="pack">
+      <h3>520 diamants</h3>
+      <button onclick="choisir('520 diamants')">
+        Choisir ce pack
+      </button>
+    </div>
+
+    <div class="pack">
+      <h3>1060 diamants</h3>
+      <button onclick="choisir('1060 diamants')">
+        Choisir ce pack
+      </button>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>📦 Commander</h2>
+
+    <form onsubmit="commander(event)">
+      <input
+        type="text"
+        id="joueur"
+        placeholder="Votre ID joueur Free Fire"
+        required
+      >
+
+      <input
+        type="text"
+        id="pack"
+        placeholder="Pack choisi"
+        readonly
+        required
+      >
+
+      <button type="submit">
+        Envoyer ma commande
+      </button>
+    </form>
+
+    <p class="note">
+      Cette page est une démonstration.
+      Les commandes et paiements ne sont pas encore connectés.
+    </p>
+  </div>
+
+  <footer>
+    <p>© 2026 WEBENS DIAMONDS</p>
+    <p>Merci pour votre visite ❤️</p>
+  </footer>
+
+  <script>
+    function choisir(nom) {
+      document.getElementById("pack").value = nom;
+      document.getElementById("joueur").focus();
+    }
+
+    function commander(event) {
+      event.preventDefault();
+
+      alert(
+        "Votre commande n'est pas encore envoyée. " +
+        "Le système de commande doit être configuré."
+      );
+    }
+  </script>
+
+</body>
+  </html>
