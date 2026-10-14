@@ -176,4 +176,234 @@
   </script>
 
 </body>
-  </html>
+  </html><!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WEBENS DIAMONDS</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #07101f;
+  color: white;
+  text-align: center;
+}
+
+header {
+  padding: 28px 12px;
+  background: linear-gradient(135deg, #07101f, #073b80);
+  border-bottom: 3px solid #24c8ff;
+}
+
+header h1 {
+  color: #36c5ff;
+  font-size: 28px;
+  margin: 5px;
+}
+
+header p { margin: 8px; }
+
+.intro { padding: 18px 12px; }
+
+h2 { color: #36c5ff; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+
+.pack {
+  background: #112541;
+  border: 1px solid #24c8ff;
+  border-radius: 14px;
+  padding: 16px 8px;
+  box-shadow: 0 0 10px #063c65;
+}
+
+.diamond {
+  font-size: 30px;
+}
+
+.pack h3 {
+  margin: 8px 0;
+  font-size: 20px;
+}
+
+.price {
+  color: #36c5ff;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+button {
+  background: #08a9e8;
+  color: #001326;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+}
+
+form {
+  margin: 15px;
+  padding: 20px;
+  background: #112541;
+  border: 1px solid #24c8ff;
+  border-radius: 14px;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin: 12px 0;
+  border: 1px solid #36c5ff;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.note {
+  color: #c3d6eb;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+footer {
+  padding: 20px;
+  color: #36c5ff;
+}
+
+@media (min-width: 650px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="font-size:38px">💎</div>
+  <h1>WEBENS DIAMONDS</h1>
+  <p>FREE FIRE DIAMONDS</p>
+  <p>Rapide • Simple • Sécurisé</p>
+</header>
+
+<section class="intro">
+  <h2>💎 Choisissez votre pack</h2>
+  <p>Chwazi pake dyaman ou vle a.</p>
+</section>
+
+<main class="grid" id="packs"></main>
+
+<section>
+  <h2>🎮 Commander</h2>
+  <form id="orderForm">
+    <label for="player">ID joueur Free Fire</label>
+    <input id="player" type="text"
+      placeholder="Antre ID jwè ou"
+      required>
+
+    <label for="pack">Pack choisi</label>
+    <select id="pack" required>
+      <option value="">Chwazi yon pake</option>
+    </select>
+
+    <button type="submit">COMMANDER</button>
+  </form>
+
+  <p id="result" class="note" aria-live="polite"></p>
+
+  <p class="note">
+    Cette page affiche les packs disponibles.
+    Les commandes ne sont pas encore envoyées
+    à un service de traitement et les paiements
+    ne sont pas connectés.
+  </p>
+</section>
+
+<footer>
+  <p>© 2026 WEBENS DIAMONDS 💙</p>
+</footer>
+
+<script>
+const packs = [
+  {diamonds: 110, price: 150},
+  {diamonds: 220, price: 300},
+  {diamonds: 341, price: 450},
+  {diamonds: 451, price: 600},
+  {diamonds: 572, price: 750},
+  {diamonds: 682, price: 900},
+  {diamonds: 792, price: 1050},
+  {diamonds: 913, price: 1200},
+  {diamonds: 1023, price: 1350},
+  {diamonds: 1166, price: 1500},
+  {diamonds: 1507, price: 2000},
+  {diamonds: 2398, price: 3000},
+  {diamonds: 3564, price: 4500},
+  {diamonds: 6160, price: 7500}
+];
+
+const grid = document.getElementById("packs");
+const selector = document.getElementById("pack");
+
+packs.forEach((item) => {
+  const name = item.diamonds + " Diamonds";
+  const price = item.price.toLocaleString("en-US") + " GDS";
+
+  const card = document.createElement("article");
+  card.className = "pack";
+
+  const icon = document.createElement("div");
+  icon.className = "diamond";
+  icon.textContent = "💎";
+
+  const title = document.createElement("h3");
+  title.textContent = name;
+
+  const amount = document.createElement("p");
+  amount.className = "price";
+  amount.textContent = price;
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.textContent = "COMMANDER";
+  button.addEventListener("click", () => {
+    selector.value = String(item.diamonds);
+    document.getElementById("player").focus();
+    document.getElementById("orderForm").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+
+  card.append(icon, title, amount, button);
+  grid.appendChild(card);
+
+  const option = document.createElement("option");
+  option.value = String(item.diamonds);
+  option.textContent = name + " — " + price;
+  selector.appendChild(option);
+});
+
+document.getElementById("orderForm")
+  .addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    document.getElementById("result").textContent =
+      "Fòm nan mache, men kòmand lan poko voye. " +
+      "Pa fè peman jiskaske sèvis kòmand lan konfime.";
+  });
+</script>
+
+</body>
+</html>
