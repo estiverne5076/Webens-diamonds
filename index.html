@@ -1,223 +1,204 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WEBENS DIAMONDS</title>
 <style>
-* { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #07101f;
+  background: #071426;
   color: white;
-  text-align: center;
 }
 header {
+  text-align: center;
   padding: 25px 10px;
-  background: #111a35;
-  border-bottom: 2px solid #24c8ff;
+  background: #0b2342;
 }
-h1, h2 { color: #36c5ff; }
-h1 { font-size: 28px; }
-.intro { padding: 15px; }
-.grid {
+h1 { color: #35aaff; }
+main { padding: 15px; max-width: 800px; margin: auto; }
+.packs {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  padding: 12px;
 }
-.pack {
-  background: #182f4b;
-  border: 1px solid #36c5ff;
-  border-radius: 15px;
-  padding: 15px 8px;
+.card, .form {
+  background: #122944;
+  border: 1px solid #28517b;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
 }
-.diamond { font-size: 30px; }
-.price {
-  color: #36c5ff;
-  font-size: 19px;
-  font-weight: bold;
-}
+.card { margin-bottom: 0; }
+.diamond { color: #70c8ff; font-size: 19px; font-weight: bold; }
+.price { margin: 10px 0; font-size: 18px; }
 button {
   width: 100%;
-  padding: 13px 6px;
-  background: #08a9e8;
-  color: #061326;
+  padding: 12px;
   border: 0;
-  border-radius: 9px;
-  font-weight: bold;
-  font-size: 15px;
-}
-form {
-  margin: 15px;
-  padding: 20px;
-  background: #182f4b;
-  border: 1px solid #36c5ff;
-  border-radius: 15px;
-}
-input, select {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  margin: 12px 0;
   border-radius: 8px;
+  background: #168bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.form { margin-top: 22px; text-align: left; }
+label { display: block; margin: 14px 0 6px; }
+input, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 7px;
+  border: 1px solid #426080;
+  background: #071426;
+  color: white;
   font-size: 16px;
+  box-sizing: border-box;
 }
-.note {
-  padding: 10px 15px;
-  color: #c5d5e8;
+.notice {
+  background: #09203a;
+  padding: 12px;
+  border-radius: 8px;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
-footer {
-  padding: 20px;
-  color: #36c5ff;
+.small { color: #c1d1e5; font-size: 13px; line-height: 1.5; }
+#result {
+  display: none;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin-top: 15px;
+  padding: 12px;
+  background: #0b3c31;
+  border-radius: 8px;
 }
-@media (min-width: 650px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
+@media(max-width: 360px) {
+  .packs { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div style="font-size:40px">💎</div>
-  <h1>WEBENS DIAMONDS</h1>
-  <p>FREE FIRE TOP UP</p>
-  <p>Bienvenue chez WEBENS DIAMONDS 💙</p>
+  <h1>💎 WEBENS DIAMONDS 💎</h1>
+  <p>Achte dyaman Free Fire fasil!</p>
 </header>
 
-<section class="intro">
-  <h2>💎 CHOISIS TON PACK</h2>
-  <p>Chwazi kantite dyaman ou vle a.</p>
-</section>
+<main>
+  <h2>💎 CHWAZI PAKÈ DYAMAN OU</h2>
+  <div class="packs" id="packs"></div>
 
-<main class="grid" id="packs"></main>
+  <section class="form" id="commande">
+    <h2>📋 ENFÒMASYON KÒMANN</h2>
 
-<section>
-  <h2>🎮 Commander</h2>
-  <form id="orderForm">
-    <label for="player">ID joueur Free Fire</label>
-    <input id="player" type="text"
-      inputmode="numeric"
-      placeholder="Antre ID jwè a"
-      required>
-
-    <label for="pack">Pack choisi</label>
-    <select id="pack" required>
+    <label for="pack">Pake dyaman</label>
+    <select id="pack">
       <option value="">Chwazi yon pake</option>
     </select>
 
-    <p id="total">Pri: —</p>
-    <button type="submit">CONTINUER LE paiement</button>
-  </form>
+    <label for="uid">UID Free Fire</label>
+    <input id="uid" inputmode="numeric" placeholder="Antre UID ou">
 
-  <p id="result" class="note" aria-live="polite"></p>
-  <p class="note">
-    Demo : les commandes et les paiements ne sont pas encore connectés.
-    Pa fè peman jiskaske sèvis la konfime kòmand lan.
-  </p>
-</section>
+    <h2>💳 PEMAN NATCASH</h2>
+    <div class="notice">
+      <strong>Nimewo Natcash:</strong><br>
+      <span id="natcash">Nimewo reseptè a poko mete.</span>
+      <p class="small">
+        Verifye nimewo reseptè a ak montan an anvan ou peye.
+        Pa janm pataje PIN oswa kòd konfimasyon ou.
+      </p>
+    </div>
 
-<footer>
-  <p>© 2026 WEBENS DIAMONDS 💙</p>
-</footer>
+    <label for="reference">Referans tranzaksyon Natcash</label>
+    <input id="reference" placeholder="Antre referans peman an">
+
+    <label for="whatsapp">Nimewo WhatsApp ou (opsyonèl)</label>
+    <input id="whatsapp" inputmode="tel" placeholder="Nimewo ou">
+
+    <button id="continue" type="button" style="margin-top:18px">
+      CONTINUER LE PAIEMENT
+    </button>
+
+    <div id="result"></div>
+
+    <p class="small">
+      Peman yo verifye manyèlman. Bouton sa a prepare yon mesaj kòmann;
+      li pa voye kòmann nan otomatikman. Administratè a dwe verifye peman an
+      anvan li livre dyaman yo.
+    </p>
+  </section>
+</main>
 
 <script>
 const packs = [
-  {diamonds:110, price:150},
-  {diamonds:220, price:300},
-  {diamonds:341, price:450},
-  {diamonds:451, price:600},
-  {diamonds:572, price:750},
-  {diamonds:682, price:900},
-  {diamonds:792, price:1050},
-  {diamonds:913, price:1200},
-  {diamonds:1023, price:1350},
-  {diamonds:1166, price:1500},
-  {diamonds:1507, price:2000},
-  {diamonds:2398, price:3000},
-  {diamonds:3564, price:4500},
-  {diamonds:6160, price:7500}
+  [110,150],
+  [220,300],
+  [341,450],
+  [451,600],
+  [572,750],
+  [682,900],
+  [792,1050],
+  [913,1200],
+  [1023,1350],
+  [1166,1500],
+  [1507,2000],
+  [2398,3000],
+  [3564,4500],
+  [6160,7500]
 ];
 
-const grid = document.getElementById("packs");
-const selector = document.getElementById("pack");
-const total = document.getElementById("total");
-const result = document.getElementById("result");
+const format = n => n.toLocaleString("fr-FR");
+const packArea = document.getElementById("packs");
+const select = document.getElementById("pack");
 
-function formatPrice(price) {
-  return price.toLocaleString("en-US") + " GDS";
-}
-
-packs.forEach(item => {
-  const name = item.diamonds + " Diamonds";
-  const price = formatPrice(item.price);
-
-  const card = document.createElement("article");
-  card.className = "pack";
-
-  const icon = document.createElement("div");
-  icon.className = "diamond";
-  icon.textContent = "💎";
-
-  const title = document.createElement("h3");
-  title.textContent = name;
-
-  const amount = document.createElement("p");
-  amount.className = "price";
-  amount.textContent = price;
-
-  const button = document.createElement("button");
-  button.type = "button";
-  button.textContent = "COMMANDER";
-
+packs.forEach((p, i) => {
   const option = document.createElement("option");
-  option.value = String(item.diamonds);
-  option.textContent = name + " — " + price;
-  selector.appendChild(option);
+  option.value = i;
+  option.textContent = format(p[0]) + " diamants — " + format(p[1]) + " GDS";
+  select.appendChild(option);
 
-  button.addEventListener("click", () => {
-    selector.value = String(item.diamonds);
-    total.textContent = "Pri: " + price;
-    document.getElementById("orderForm").scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-
-  card.append(icon, title, amount, button);
-  grid.appendChild(card);
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML =
+    '<div class="diamond">💎 ' + format(p[0]) + '</div>' +
+    '<div class="price">' + format(p[1]) + ' GDS</div>' +
+    '<button type="button" data-index="' + i + '">CHOISIR</button>';
+  packArea.appendChild(card);
 });
 
-selector.addEventListener("change", () => {
-  const item = packs.find(
-    p => String(p.diamonds) === selector.value
-  );
-  total.textContent = item
-    ? "Pri: " + formatPrice(item.price)
-    : "Pri: —";
+packArea.addEventListener("click", function(e) {
+  const btn = e.target.closest("button[data-index]");
+  if (!btn) return;
+  select.value = btn.dataset.index;
+  document.getElementById("commande").scrollIntoView({behavior:"smooth"});
 });
 
-document.getElementById("orderForm").addEventListener("submit", event => {
-  event.preventDefault();
+document.getElementById("continue").addEventListener("click", async function() {
+  const index = select.value;
+  const uid = document.getElementById("uid").value.trim();
+  const reference = document.getElementById("reference").value.trim();
+  const whatsapp = document.getElementById("whatsapp").value.trim();
+  const result = document.getElementById("result");
 
-  const player = document.getElementById("player").value.trim();
-  const item = packs.find(
-    p => String(p.diamonds) === selector.value
-  );
-
-  if (!player || !item) {
-    result.textContent = "Antre ID jwè a epi chwazi yon pake.";
+  if (index === "" || !uid || !reference) {
+    alert("Chwazi yon pake epi antre UID ak referans tranzaksyon an.");
     return;
   }
 
-  result.textContent =
-    "Ou chwazi " + item.diamonds + " Diamonds pou " +
-    formatPrice(item.price) + ". Kòmand lan poko voye, paske " +
-    "sistèm kòmand ak peman an poko konekte.";
-});
-</script>
+  const p = packs[Number(index)];
+  const message =
+    "NOUVO KÒMANN — WEBENS DIAMONDS\n" +
+    "Pake: " + format(p[0]) + " diamants\n" +
+    "Montan: " + format(p[1]) + " GDS\n" +
+    "UID Free Fire: " + uid + "\n" +
+    "Referans Natcash: " + reference + "\n" +
+    "WhatsApp kliyan: " + (whatsapp || "Pa bay") + "\n\n" +
+    "Tanpri verifye peman an manyèlman anvan livrezon.";
 
-</body>
-</html>
+  result.style.display = "block";
+  result.textContent = message + "\n\nKopye mesaj sa a epi voye l bay administratè sit la pou verifikasyon.";
+
+  try {
+    await navigator.clipboard.writeText(message);
+    result.textContent = "Mesaj la kopye! Voye l bay administratè a:\n\n" + message;
+  } catch (e) {}
