@@ -1,210 +1,37 @@
-const format = n => n.toLocaleString("fr-FR");
-const packArea = document.getElementById("packs");
-const select = document.getElementById("pack");
-
-packs.forEach((p, i) => {8h<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WEBENS DIAMONDS</title>
+!DOCTYPE html>
+<html lang="ht"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WEBENS DIAMONDS</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #071426;
-  color: white;
-}
-header {
-  text-align: center;
-  padding: 25px 10px;
-  background: #0b2342;
-}
-h1 { color: #35aaff; }
-main { padding: 15px; max-width: 800px; margin: auto; }
-.packs {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-.card, .form {
-  background: #122944;
-  border: 1px solid #28517b;
-  border-radius: 12px;
-  padding: 14px;
-  text-align: center;
-}
-.card { margin-bottom: 0; }
-.diamond { color: #70c8ff; font-size: 19px; font-weight: bold; }
-.price { margin: 10px 0; font-size: 18px; }
-button {
-  width: 100%;
-  padding: 12px;
-  border: 0;
-  border-radius: 8px;
-  background: #168bff;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-.form { margin-top: 22px; text-align: left; }
-label { display: block; margin: 14px 0 6px; }
-input, select {
-  width: 100%;
-  padding: 12px;
-  border-radius: 7px;
-  border: 1px solid #426080;
-  background: #071426;
-  color: white;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-.notice {
-  background: #09203a;
-  padding: 12px;
-  border-radius: 8px;
-  line-height: 1.6;
-  overflow-wrap: anywhere;
-}
-.small { color: #c1d1e5; font-size: 13px; line-height: 1.5; }
-#result {
-  display: none;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  margin-top: 15px;
-  padding: 12px;
-  background: #0b3c31;
-  border-radius: 8px;
-}
-@media(max-width: 360px) {
-  .packs { grid-template-columns: 1fr; }
-}
-</style>
-</head>
-<body>
-
-<header>
-  <h1>💎 WEBENS DIAMONDS 💎</h1>
-  <p>Achte dyaman Free Fire fasil!</p>
-</header>
-
-<main>
-  <h2>💎 CHWAZI PAKÈ DYAMAN OU</h2>
-  <div class="packs" id="packs"></div>
-
-  <section class="form" id="commande">
-    <h2>📋 ENFÒMASYON KÒMANN</h2>
-
-    <label for="pack">Pake dyaman</label>
-    <select id="pack">
-      <option value="">Chwazi yon pake</option>
-    </select>
-
-    <label for="uid">UID Free Fire</label>
-    <input id="uid" inputmode="numeric" placeholder="Antre UID ou">
-
-    <h2>💳 PEMAN NATCASH</h2>
-    <div class="notice">
-      <strong>Nimewo Natcash:</strong><br>
-      <span id="natcash">Nimewo reseptè a poko mete.</span>
-      <p class="small">
-        Verifye nimewo reseptè a ak montan an anvan ou peye.
-        Pa janm pataje PIN oswa kòd konfimasyon ou.
-      </p>
-    </div>
-
-    <label for="reference">Referans tranzaksyon Natcash</label>
-    <input id="reference" placeholder="Antre referans peman an">
-
-    <label for="whatsapp">Nimewo WhatsApp ou (opsyonèl)</label>
-    <input id="whatsapp" inputmode="tel" placeholder="Nimewo ou">
-
-    <button id="continue" type="button" style="margin-top:18px">
-      CONTINUER LE PAIEMENT
-    </button>
-
-    <div id="result"></div>
-
-    <p class="small">
-      Peman yo verifye manyèlman. Bouton sa a prepare yon mesaj kòmann;
-      li pa voye kòmann nan otomatikman. Administratè a dwe verifye peman an
-      anvan li livre dyaman yo.
-    </p>
-  </section>
-</main>
-
+*{box-sizing:border-box}body{margin:0;background:#061426;color:#f4f8ff;font-family:Arial,sans-serif}header{text-align:center;padding:24px 10px;background:#0b2748}h1{color:#39a5ff;font-size:clamp(25px,6vw,38px);margin:0}main{max-width:900px;margin:auto;padding:18px 12px}h2{font-size:24px}.packs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card,.form{background:#102b48;border:1px solid #244b70;border-radius:14px;padding:14px}.card{text-align:center}.amount{font-size:20px;font-weight:bold;margin:8px 0}.price{color:#8bc8ff;margin-bottom:12px}button{border:0;border-radius:9px;padding:12px;font-weight:bold;cursor:pointer}.choose,#continue{background:#1688e8;color:white;width:100%}label{display:block;margin:15px 0 7px;font-weight:bold}input,select{width:100%;padding:14px;border-radius:9px;border:1px solid #45627f;background:#061426;color:white;font-size:16px}.form{margin-top:24px}.notice,#result{background:#071d35;border-radius:10px;padding:15px;line-height:1.6;overflow-wrap:anywhere}#continue{margin-top:18px;font-size:16px}#result{display:none;white-space:pre-wrap;margin-top:14px}.small{font-size:14px;color:#c2d5e8;line-height:1.5}footer{text-align:center;padding:20px;color:#9bb5ce}@media(max-width:360px){.packs{grid-template-columns:1fr}}
+</style></head><body>
+<header><h1>💎 WEBENS DIAMONDS 💎</h1><p>Achte dyaman Free Fire fasil!</p></header>
+<main><h2>💎 CHWAZI PAKÈ DYAMAN OU</h2><div class="packs" id="packs">
+<div class="card"><div>💎</div><div class="amount">110 dyaman</div><div class="price">150 GDS</div><button class="choose" type="button" data-index="0">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">220 dyaman</div><div class="price">300 GDS</div><button class="choose" type="button" data-index="1">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">341 dyaman</div><div class="price">450 GDS</div><button class="choose" type="button" data-index="2">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">451 dyaman</div><div class="price">600 GDS</div><button class="choose" type="button" data-index="3">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">572 dyaman</div><div class="price">750 GDS</div><button class="choose" type="button" data-index="4">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">682 dyaman</div><div class="price">900 GDS</div><button class="choose" type="button" data-index="5">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">792 dyaman</div><div class="price">1 050 GDS</div><button class="choose" type="button" data-index="6">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">913 dyaman</div><div class="price">1 200 GDS</div><button class="choose" type="button" data-index="7">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">1 023 dyaman</div><div class="price">1 350 GDS</div><button class="choose" type="button" data-index="8">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">1 166 dyaman</div><div class="price">1 500 GDS</div><button class="choose" type="button" data-index="9">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">1 507 dyaman</div><div class="price">2 000 GDS</div><button class="choose" type="button" data-index="10">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">2 398 dyaman</div><div class="price">3 000 GDS</div><button class="choose" type="button" data-index="11">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">3 564 dyaman</div><div class="price">4 500 GDS</div><button class="choose" type="button" data-index="12">CHWAZI</button></div>\n<div class="card"><div>💎</div><div class="amount">6 160 dyaman</div><div class="price">7 500 GDS</div><button class="choose" type="button" data-index="13">CHWAZI</button></div>\n</div>
+<section class="form" id="commande"><h2>📋 ENFÒMASYON KÒMANN</h2>
+<label for="pack">Pakè dyaman</label><select id="pack"><option value="">Chwazi yon pake</option>
+<option value="0">110 dyaman — 150 GDS</option>\n<option value="1">220 dyaman — 300 GDS</option>\n<option value="2">341 dyaman — 450 GDS</option>\n<option value="3">451 dyaman — 600 GDS</option>\n<option value="4">572 dyaman — 750 GDS</option>\n<option value="5">682 dyaman — 900 GDS</option>\n<option value="6">792 dyaman — 1 050 GDS</option>\n<option value="7">913 dyaman — 1 200 GDS</option>\n<option value="8">1 023 dyaman — 1 350 GDS</option>\n<option value="9">1 166 dyaman — 1 500 GDS</option>\n<option value="10">1 507 dyaman — 2 000 GDS</option>\n<option value="11">2 398 dyaman — 3 000 GDS</option>\n<option value="12">3 564 dyaman — 4 500 GDS</option>\n<option value="13">6 160 dyaman — 7 500 GDS</option>\n</select>
+<label for="uid">UID Free Fire</label><input id="uid" inputmode="numeric" placeholder="Antre UID ou">
+<h2>💳 PEMAN NATCASH</h2><div class="notice"><strong>Nimewo Natcash pou peman:</strong><br><span style="font-size:24px;font-weight:bold;color:#8bc8ff">55356515</span><p class="small">Verifye nimewo reseptè a ak montan an anvan ou peye. Kenbe resi tranzaksyon an. Pa janm pataje PIN oswa kòd konfimasyon ou.</p></div>
+<label for="reference">Referans tranzaksyon Natcash</label><input id="reference" placeholder="Antre referans peman an">
+<label for="whatsapp">Nimewo WhatsApp ou (opsyonèl)</label><input id="whatsapp" type="tel" placeholder="Nimewo ou">
+<button id="continue" type="button">PREPARE KÒMANN LAN</button><div id="result"></div>
+<p class="small">Bouton an prepare yon mesaj sèlman; li pa voye kòmann lan otomatikman. Administratè a dwe verifye peman an anvan livrezon dyaman yo.</p></section></main><footer>© WEBENS DIAMONDS</footer>
 <script>
-const packs = [
-  [110,150],
-  [220,300],
-  [341,450],
-  [451,600],
-  [572,750],
-  [682,900],
-  [792,1050],
-  [913,1200],
-  [1023,1350],
-  [1166,1500],
-  [1507,2000],
-  [2398,3000],
-  [3564,4500],
-  [6160,7500]
-];
-
-const format = n => n.toLocaleString("fr-FR");
-const packArea = document.getElementById("packs");
+const packs = [[110,150],[220,300],[341,450],[451,600],[572,750],[682,900],[792,1050],[913,1200],[1023,1350],[1166,1500],[1507,2000],[2398,3000],[3564,4500],[6160,7500]];
+const fmt = n => n.toLocaleString("fr-FR");
 const select = document.getElementById("pack");
-
-packs.forEach((p, i) => {
-  const option = document.createElement("option");
-  option.value = i;
-  option.textContent = format(p[0]) + " diamants — " + format(p[1]) + " GDS";
-  select.appendChild(option);
-
-  const card = document.createElement("div");
-  card.className = "card";
-  card.innerHTML =
-    '<div class="diamond">💎 ' + format(p[0]) + '</div>' +
-    '<div class="price">' + format(p[1]) + ' GDS</div>' +
-    '<button type="button" data-index="' + i + '">CHOISIR</button>';
-  packArea.appendChild(card);
-});
-
-packArea.addEventListener("click", function(e) {
-  const btn = e.target.closest("button[data-index]");
-  if (!btn) return;
-  select.value = btn.dataset.index;
+document.querySelectorAll(".choose").forEach(button => button.addEventListener("click", () => {
+  select.value = button.dataset.index;
   document.getElementById("commande").scrollIntoView({behavior:"smooth"});
+}));
+document.getElementById("continue").addEventListener("click", async () => {
+  const index=select.value, uid=document.getElementById("uid").value.trim();
+  const reference=document.getElementById("reference").value.trim();
+  const whatsapp=document.getElementById("whatsapp").value.trim();
+  const result=document.getElementById("result");
+  if(index===""||!uid||!reference){alert("Tanpri chwazi yon pake epi antre UID Free Fire ak referans tranzaksyon an.");return;}
+  const p=packs[Number(index)];
+  const message="NOUVO KOMANN — WEBENS DIAMONDS\nPakè: "+fmt(p[0])+" dyaman\nMontan: "+fmt(p[1])+" GDS\nUID Free Fire: "+uid+"\nReferans Natcash: "+reference+"\nWhatsApp kliyan: "+(whatsapp||"Pa bay")+"\n\nTanpri verifye peman an manyèlman anvan livrezon.";
+  result.style.display="block"; result.textContent=message+"\n\nKopye mesaj sa a epi voye li bay administratè sit la pou verifikasyon.";
+  try {await navigator.clipboard.writeText(message);result.textContent="Mesaj la kopye si navigatè a pèmèt sa. Voye li bay administratè a:\n\n"+message;} catch(e) {}
 });
-
-document.getElementById("continue").addEventListener("click", async function() {
-  const index = select.value;
-  const uid = document.getElementById("uid").value.trim();
-  const reference = document.getElementById("reference").value.trim();
-  const whatsapp = document.getElementById("whatsapp").value.trim();
-  const result = document.getElementById("result");
-
-  if (index === "" || !uid || !reference) {
-    alert("Chwazi yon pake epi antre UID ak referans tranzaksyon an.");
-    return;
-  }
-
-  const p = packs[Number(index)];
-  const message =
-    "NOUVO KÒMANN — WEBENS DIAMONDS\n" +
-    "Pake: " + format(p[0]) + " diamants\n" +
-    "Montan: " + format(p[1]) + " GDS\n" +
-    "UID Free Fire: " + uid + "\n" +
-    "Referans Natcash: " + reference + "\n" +
-    "WhatsApp kliyan: " + (whatsapp || "Pa bay") + "\n\n" +
-    "Tanpri verifye peman an manyèlman anvan livrezon.";
-
-  result.style.display = "block";
-  result.textContent = message + "\n\nKopye mesaj sa a epi voye l bay administratè sit la pou verifikasyon.";
-
-  try {
-    await navigator.clipboard.writeText(message);
-    result.textContent = "Mesaj la kopye! Voye l bay administratè a:\n\n" + message;
-  } catch (e) {}</script>
-</body>
-</html>
+</script></body></html>
